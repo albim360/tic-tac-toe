@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TicTacToe</title>
-    <link rel="stylesheet" href="./css/app.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TicTacToe</title>
+  <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
-    <div id="app">
-        <div class="board">
-          <div class="square" v-for="(row, rowIndex) in board" :key="rowIndex">
-            <div v-for="(cell, colIndex) in row" :key="colIndex" @click="makeMove(rowIndex, colIndex)">
-              {{ cell }}
-            </div>
-          </div>
-        </div>
-        <div class="status">
-          <p v-if="!winner && !isBoardFull()">Turno del giocatore: {{ player }}</p>
-          <p v-if="winner">{{ winner }} ha vinto!</p>
-          <p v-if="isBoardFull() && !winner">La partita è finita in pareggio.</p>
-          <button v-if="winner || isBoardFull()" @click="restartGame">Ricomincia</button>
+  <div id="app">
+    <div class="board">
+      <div class="row" v-for="(row, rowIndex) in board" :key="rowIndex">
+        <div class="cell" v-for="(cell, colIndex) in row" :key="colIndex" @click="makeMove(rowIndex, colIndex)">
+          {{ cell }}
         </div>
       </div>
+    </div>
+    <div class="status">
+      <p v-if="!winner && !isBoardFull()">Turno del giocatore: {{ player }}</p>
+      <p v-if="winner">{{ winner }} ha vinto!</p>
+      <p v-if="isBoardFull() && !winner">La partita è finita in pareggio.</p>
+      <button v-if="winner || isBoardFull()" @click="restartGame">Ricomincia</button>
+    </div>
+  </div>
 
-      
-      <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="./js/app.js"></script>
+  <script src="https://unpkg.com/vue@3.2.22/dist/vue.global.js"></script>
+  <script src="./js/app.js"></script>
 </body>
 </html>
