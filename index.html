@@ -5,22 +5,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TicTacToe</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Permanent+Marker">
   <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
   <div id="app">
-    <div class="board">
+    <div v-if="gameMode === null" class="mode-selection">
+      <button class="mode-button" @click="setGameMode('vsSelf')">Gioca da solo</button>
+      <button class="mode-button" @click="setGameMode('vsComputer')">Gioca contro il computer</button>
+    </div>
+    <div v-if="gameMode !== null" class="board">
       <div class="row" v-for="(row, rowIndex) in board" :key="rowIndex">
         <div class="cell" v-for="(cell, colIndex) in row" :key="colIndex" @click="makeMove(rowIndex, colIndex)">
-          {{ cell }}
-        </div>
+          <span :class="cell === 'X' ? 'x' : (cell === 'O' ? 'o' : '')">{{ cell }}</span>
+        </div>        
       </div>
-    </div>
-    <div class="status">
-      <p v-if="!winner && !isBoardFull()">Turno del giocatore: {{ player }}</p>
-      <p v-if="winner">{{ winner }} ha vinto!</p>
-      <p v-if="isBoardFull() && !winner">La partita è finita in pareggio.</p>
-      <button v-if="winner || isBoardFull()" @click="restartGame">Ricomincia</button>
+      <div class="status">
+        <p v-if="!winner && !isBoardFull()">Turno del giocatore: {{ player }}</p>
+        <p v-if="winner">{{ winner }} ha vinto!</p>
+        <p v-if="isBoardFull() && !winner">La partita è finita in pareggio.</p>
+      </div>
+      <div v-if="gameOver">
+      </div>
+      <p class="status">{{ winner ? winner + ' ha vinto!' : 'Pareggio!' }}</p>
+      <button @click="goToMenu">Menu principale</button>
+      <button @click="restartGame" >Ricomincia</button>
     </div>
   </div>
 

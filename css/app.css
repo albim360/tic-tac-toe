@@ -1,61 +1,327 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
+  font-family: Arial, sans-serif;
+  display: flex;
   justify-content: center;
   align-items: center;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .board {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 360px;
-    margin-top: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 360px;
+  margin-top: 200px;
+  align-items: center;
+  justify-content: center;
+  min-width: 500px;
+  padding: 150px;
 }
 
-
 .cell {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 120px;
-    height: 120px;
-    font-size: 60px;
-    font-weight: bold;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    user-select: none;
-  }
-  
-  .cell:hover {
-    background-color: #eee;
-  }
-  
-  .cell.x {
-    color: #f00;
-  }
-  
-  .cell.o {
-    color: #00f;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  font-size: 60px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cell:hover {
+  background-color: #eee;
+}
+
+.cell.x {
+  color: #f00;
+}
+
+.cell.o {
+  color: #00f;
+}
+
 .x {
-    color: #f00;
+  color: #f00;
 }
 
 .o {
-    color: #00f;
+  color: #00f;
 }
 
 .status {
-    text-align: center;
-    font-size: 24px;
-    margin-top: 16px;
-    margin-bottom: 0;
+  text-align: center;
+  font-size: 24px;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.mode-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.mode-selection button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #000;
+  font-size: 20px;
+}
+
+.game-board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  font-size: 50px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #000;
+}
+
+.status {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.status p {
+  margin: 0;
+  font-size: 20px;
+}
+
+.status button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #000;
+}
+
+.board td {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-top: 0;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin-top: 30px;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  font-size: 60px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cell:hover {
+  background-color: #eee;
+}
+
+.cell.x {
+  color: #f00;
+}
+
+.cell.o {
+  color: #00f;
+}
+
+.x {
+  color: #f00;
+}
+
+.o {
+  color: #00f;
+}
+
+.status {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.mode-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mode-button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.mode-selection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.mode-selection button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #000;
+  font-size: 20px;
+  margin: 20px;
+}
+
+.game-board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  font-size: 50px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #000;
+}
+
+.status {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.status p {
+  margin: 0;
+  font-size: 20px;
+}
+
+.status button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #000;
+}
+
+.board td {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-top: 0;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #333;
+  font-size: 4rem;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.cell:hover {
+  background-color: #f0f0f0;
+}
+
+.status {
+  margin-top: 30px;
+}
+
+button {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.restart, .main-menu {
+  font-size: 1.2rem;
+  background-color: #f7df1e;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
